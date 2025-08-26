@@ -1,0 +1,7 @@
+<library path="lib/libagv_planner">
+    <class name="agv_planner/AgvPlanner" type="agv_planner::AgvPlanner" base_class_type="nav_core::BaseLocalPlanner">
+    <descriptiom>
+        from neil cheng, email: ken1999429@gmail.com
+    </descriptiom>
+    </class>
+</library>
