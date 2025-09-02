@@ -100,9 +100,11 @@ namespace agv_planner
         {
             double final_yaw = tf::getYaw(pose_final.pose.orientation);
             ROS_WARN("Final_yaw=%.2f", final_yaw);
-            // cmd_vel.linear.x = pose_final.pose.position.x * 1.0;
+            int direct = 0;
+            if (final_yaw > 0) direct = 1;
+            else direct = -1;
             cmd_vel.linear.x = 0.0;
-            cmd_vel.angular.z = 0.3;
+            cmd_vel.angular.z = 0.3 * direct;
             if(abs(final_yaw) < 0.2)
             {
                 goal_reached = true;
